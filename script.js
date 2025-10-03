@@ -1,8 +1,8 @@
 function getRandomValue() {
-        return Math.floor(Math.random() * (90 - 70 + 1)) + 70;
-    }
+  return Math.floor(Math.random() * (90 - 70 + 1)) + 70;
+}
 
-    // HTML progress circular bar 
+// HTML progress circular bar 
 
 
 
@@ -31,7 +31,7 @@ function updateOnScroll() {
   const scrollY = window.scrollY;
   const navbar = document.getElementById('navbar-top');
   const backToTopBtn = document.getElementById('btn-back-to-top');
-  
+
   // Navbar functionality
   if (scrollY > 50) {
     navbar.classList.add('fixed-top');
@@ -41,7 +41,7 @@ function updateOnScroll() {
     navbar.classList.remove('fixed-top');
     document.body.style.paddingTop = '0';
   }
-  
+
   // Enhanced navbar styling
   const navbarElement = document.querySelector('.navbar');
   if (navbarElement) {
@@ -51,21 +51,21 @@ function updateOnScroll() {
       navbarElement.classList.remove('scrolled');
     }
   }
-  
+
   // Back to top button functionality
   if (scrollY > 20) {
     backToTopBtn.style.display = 'block';
   } else {
     backToTopBtn.style.display = 'none';
   }
-  
+
   // Parallax effect for floating icons
   const parallaxElements = document.querySelectorAll('.floating-icon');
   parallaxElements.forEach((element, index) => {
     const speed = 0.5 + (index * 0.1);
     element.style.transform = `translateY(${scrollY * speed}px)`;
   });
-  
+
   ticking = false;
 }
 
@@ -80,10 +80,10 @@ function requestTick() {
 window.addEventListener('scroll', requestTick);
 
 // Back to top button click handler
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const backToTopBtn = document.getElementById('btn-back-to-top');
   if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', function() {
+    backToTopBtn.addEventListener('click', function () {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -102,38 +102,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Enhanced smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
 });
 
 // Parallax effects are now handled in the main scroll handler
 
 // Enhanced progress animations with intersection observer
 const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
+  threshold: 0.5,
+  rootMargin: '0px 0px -100px 0px'
 };
 
 const progressObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Trigger progress animations when skills section is visible
-            startProgressAnimations();
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Trigger progress animations when skills section is visible
+      startProgressAnimations();
+    }
+  });
 }, observerOptions);
 
 const skillsSection = document.querySelector('.skill');
 if (skillsSection) {
-    progressObserver.observe(skillsSection);
+  progressObserver.observe(skillsSection);
 }
 
 
@@ -142,16 +142,15 @@ let htmlProgress = document.querySelector(".html-css"),
   htmlValue = document.querySelector(".html-progress");
 
 let htmlStartValue = 0,
-  htmlEndValue = 90,
+  htmlEndValue = 100,
   htmlspeed = 30;
 
 let progresshtml = setInterval(() => {
   htmlStartValue++;
 
   htmlValue.textContent = `${htmlStartValue}%`;
-  htmlProgress.style.background = `conic-gradient(#fca61f ${
-    htmlStartValue * 3.6
-  }deg, #ededed 0deg)`;
+  htmlProgress.style.background = `conic-gradient(#fca61f ${htmlStartValue * 3.6
+    }deg, #ededed 0deg)`;
 
   if (htmlStartValue == htmlEndValue) {
     clearInterval(progresshtml);
@@ -163,16 +162,15 @@ let javascriptProgress = document.querySelector(".javascript"),
   javascriptValue = document.querySelector(".javascript-progress");
 
 let javascriptStartValue = 0,
-  javascriptEndValue = 75,
+  javascriptEndValue = 100,
   jsspeed = 30;
 
 let progressjs = setInterval(() => {
   javascriptStartValue++;
 
   javascriptValue.textContent = `${javascriptStartValue}%`;
-  javascriptProgress.style.background = `conic-gradient(#7d2ae8 ${
-    javascriptStartValue * 3.6
-  }deg, #ededed 0deg)`;
+  javascriptProgress.style.background = `conic-gradient(#7d2ae8 ${javascriptStartValue * 3.6
+    }deg, #ededed 0deg)`;
 
   if (javascriptStartValue == javascriptEndValue) {
     clearInterval(progressjs);
@@ -191,9 +189,8 @@ let progressphp = setInterval(() => {
   phpStartValue++;
 
   phpValue.textContent = `${phpStartValue}%`;
-  phpProgress.style.background = `conic-gradient(#20c997 ${
-    phpStartValue * 3.6
-  }deg, #ededed 0deg)`;
+  phpProgress.style.background = `conic-gradient(#20c997 ${phpStartValue * 3.6
+    }deg, #ededed 0deg)`;
 
   if (phpStartValue == phpEndValue) {
     clearInterval(progressphp);
@@ -205,16 +202,15 @@ let reactProgress = document.querySelector(".reactjs"),
   reactValue = document.querySelector(".reactjs-progress");
 
 let reactStartValue = 0,
-  reactEndValue = 30,
+  reactEndValue = 100,
   rjsspeed = 30;
 
 let progressreact = setInterval(() => {
   reactStartValue++;
 
   reactValue.textContent = `${reactStartValue}%`;
-  reactProgress.style.background = `conic-gradient(#3f396d ${
-    reactStartValue * 3.6
-  }deg, #ededed 0deg)`;
+  reactProgress.style.background = `conic-gradient(#3f396d ${reactStartValue * 3.6
+    }deg, #ededed 0deg)`;
 
   if (reactStartValue == reactEndValue) {
     clearInterval(progressreact);
@@ -226,7 +222,7 @@ let progressreact = setInterval(() => {
 let pythonProgress = document.querySelector(".python");
 let pythonValue = document.querySelector(".python-progress");
 let pythonStartValue = 0;
-let pythonEndValue = 85;
+let pythonEndValue = 80;
 let pythonSpeed = 30;
 let pythonProgressTimer = setInterval(() => {
   pythonStartValue++;
@@ -256,7 +252,7 @@ let nextjsProgressTimer = setInterval(() => {
 let mongodbProgress = document.querySelector(".mongodb");
 let mongodbValue = document.querySelector(".mongodb-progress");
 let mongodbStartValue = 0;
-let mongodbEndValue = 75;
+let mongodbEndValue = 90;
 let mongodbSpeed = 30;
 let mongodbProgressTimer = setInterval(() => {
   mongodbStartValue++;
@@ -286,7 +282,7 @@ let mysqlProgressTimer = setInterval(() => {
 let csharpProgress = document.querySelector(".csharp");
 let csharpValue = document.querySelector(".csharp-progress");
 let csharpStartValue = 0;
-let csharpEndValue = 70;
+let csharpEndValue = 100;
 let csharpSpeed = 30;
 let csharpProgressTimer = setInterval(() => {
   csharpStartValue++;
@@ -301,7 +297,7 @@ let csharpProgressTimer = setInterval(() => {
 let cppProgress = document.querySelector(".cpp");
 let cppValue = document.querySelector(".cpp-progress");
 let cppStartValue = 0;
-let cppEndValue = 75;
+let cppEndValue = 80;
 let cppSpeed = 30;
 let cppProgressTimer = setInterval(() => {
   cppStartValue++;
@@ -312,30 +308,53 @@ let cppProgressTimer = setInterval(() => {
   }
 }, cppSpeed);
 
+//Node Js
+// Node.js progress animation
+let nodejsProgress = document.querySelector(".nodejs");
+let nodejsValue = document.querySelector(".nodejs-progress");
+let nodejsStartValue = 0;
+let nodejsEndValue = 100; // <-- set your Node.js percentage here
+let nodejsSpeed = 30;
+
+let nodejsProgressTimer = setInterval(() => {
+  nodejsStartValue++;
+  nodejsValue.textContent = `${nodejsStartValue}%`;
+  nodejsProgress.style.background = `conic-gradient(#68A063 ${nodejsStartValue * 3.6}deg, #ededed 0deg)`;
+  if (nodejsStartValue == nodejsEndValue) {
+    clearInterval(nodejsProgressTimer);
+  }
+}, nodejsSpeed);
+
+
+
+
 function startProgressAnimations() {
-    // Your existing progress animations here
-    // ... existing code ...
+  // Your existing progress animations here
+  // ... existing code ...
 }
 
 // Add loading screen
 window.addEventListener('load', () => {
-    const loader = document.createElement('div');
-    loader.className = 'page-loader';
-    loader.innerHTML = `
+  const loader = document.createElement('div');
+  loader.className = 'page-loader';
+  loader.innerHTML = `
         <div class="loader-content">
             <div class="spinner"></div>
             <p>Loading Portfolio...</p>
         </div>
     `;
-    
-    document.body.appendChild(loader);
-    
+
+  document.body.appendChild(loader);
+
+  setTimeout(() => {
+    loader.style.opacity = '0';
     setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.remove();
-        }, 500);
-    }, 1500);
+      loader.remove();
+    }, 500);
+  }, 1500);
 });
+
+
+
 
 
